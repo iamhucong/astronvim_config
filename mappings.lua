@@ -32,6 +32,13 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<leader>x"] = { name = "Troubles" },
+    ["<leader>xx"] = { function() require("trouble").open() end, desc = "Trouble" },
+    ["<leader>xw"] = { function() require("trouble").open "workspace_diagnostics" end, desc = "Workspace diagnostics" },
+    ["<leader>xd"] = { function() require("trouble").open "document_diagnostics" end, desc = "Document diagnostics" },
+    ["<leader>xq"] = { function() require("trouble").open "quickfix" end, desc = "Quickfix" },
+    ["<leader>xl"] = { function() require("trouble").open "loclist" end, desc = "Loclist" },
+    ["gR"] = { function() require("trouble").open "lsp_references" end },
   },
   t = {
     -- setting a mapping to false will disable it
